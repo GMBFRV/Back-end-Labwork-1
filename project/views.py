@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/healthcheck', methods=['GET'])
 def healthcheck():
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    status = 'Service is up and running'
+    status = 'Service is up and running, code 200'
     greeting = 'Hello, user!'
     response_data = {
         'timestamp': current_time,
