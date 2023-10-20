@@ -1,4 +1,4 @@
-FROM python:3.10.10
+FROM python:3.11.3
 
 WORKDIR /project
 
@@ -6,6 +6,6 @@ COPY requirements.txt .
 
 RUN python -m pip install -r requirements.txt
 
-COPY . /views
+COPY . /project
 
-CMD flask --app views.py run -h 0.0.0.0 -p $PORT
+CMD flask --app <your app name> run -h 0.0.0.0 -p $PORT
