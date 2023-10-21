@@ -1,11 +1,12 @@
-FROM python:3.11.3
+FROM python:3.10
 
-WORKDIR /project
+WORKDIR /backend
 
 COPY requirements.txt .
 
-RUN python -m pip install -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-COPY . /project
+COPY . .
 
-CMD flask --app <your app name> run -h 0.0.0.0 -p $PORT
+CMD ["python", "project/views.py"]
