@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+ views.py:
+   restart: always
+   build:
+     context: .
+     dockerfile: Dockerfile
+   environment:
+     PORT: 5001
+   ports:
+     - "5001:5001"
